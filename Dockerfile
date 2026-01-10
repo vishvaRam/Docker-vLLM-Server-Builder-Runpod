@@ -25,6 +25,8 @@ RUN mkdir -p /var/run/sshd && \
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
+COPY qwen3_nonthinking.jinja /qwen3_nonthinking.jinja
+
 # Set sensible defaults (Can be overridden by RunPod Env Vars)
 ENV MODEL=""
 ENV PORT=8000

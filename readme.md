@@ -1,5 +1,4 @@
-
-# 🚀 Universal vLLM Server (CUDA 12.6.3)
+# 🚀 Universal vLLM Server
 
 Production-grade, OpenAI-compatible server using **vLLM v0.13.0**. Deploy LLMs, Embeddings, or Vision models via environment variables.
 
@@ -64,7 +63,7 @@ CLI flags map to **UPPERCASE** env vars (e.g., `--max-model-len` → `MAX_MODEL_
 
 | Variable                | Default  | Description                                               |
 | :---------------------- | :------- | :-------------------------------------------------------- |
-| `RUNNER`              | `auto` | Set to**`pooling`** for Embedding models.         |
+| `RUNNER`              | `auto` | Set to**`pooling`** for Embedding models.               |
 | `LIMIT_MM_PER_PROMPT` | `None` | **Mandatory for Vision**: e.g., `{"image": 1}`.   |
 | `REASONING_PARSER`    | `None` | Parser for DeepSeek-R1 style reasoning.                   |
 | `TOOL_CALL_PARSER`    | `None` | Parser for tool calls (e.g.,`hermes`, `llama3_json`). |
