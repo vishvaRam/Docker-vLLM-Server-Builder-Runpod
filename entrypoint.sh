@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ----------------------------------------------------------------------------
-# 🚀 vLLM v0.13.0 Universal RunPod Entrypoint
+# 🚀 vLLM v0.15.0 Universal RunPod Entrypoint
 # Author: Vishva Murthy
 # ----------------------------------------------------------------------------
 

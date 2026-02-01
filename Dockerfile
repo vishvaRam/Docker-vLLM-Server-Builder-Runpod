@@ -1,5 +1,5 @@
 # Use your optimized base image
-FROM vishva123/vllm-server-cuda-12.6.3
+FROM vishva123/vllm-server-cuda-12.8.1
 
 WORKDIR /workspace
 
