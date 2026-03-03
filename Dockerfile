@@ -1,5 +1,5 @@
 # Use your optimized base image
-FROM vishva123/vllm-server-cuda-12.8.1
+FROM vishva123/vllm-nightly-server-cuda-12.6.3:nightly-2026-03
 
 WORKDIR /workspace
 
@@ -35,5 +35,7 @@ ENV GPU_UTIL=0.90
 ENV TP_SIZE=1
 
 EXPOSE 8000 22
+
+RUN pip install --no-cache-dir "transformers==5.0.0"
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

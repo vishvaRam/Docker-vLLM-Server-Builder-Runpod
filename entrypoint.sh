@@ -61,6 +61,7 @@ add_bool  "--enable-force-include-usage" "$ENABLE_FORCE_INCLUDE_USAGE" # Great f
 # --- Model Loading & Hardware ---
 add_param "--revision"                  "$REVISION"
 add_param "--tokenizer"                 "$TOKENIZER"
+add_param "--tokenizer-mode"            "$TOKENIZER_MODE"   #  slow | auto | mistral
 add_param "--dtype"                     "$DTYPE"
 add_param "--max-model-len"             "$MAX_MODEL_LEN"
 add_bool  "--trust-remote-code"         "${TRUST_REMOTE_CODE:-true}"
@@ -121,7 +122,8 @@ add_param "--tool-call-parser"          "$TOOL_CALL_PARSER"
 # ----------------------------------------------------------------------------
 
 if [ -n "$EXTRA_ARGS" ]; then
-    CMD+=($EXTRA_ARGS)
+    read -ra EXTRA_ARRAY <<< "$EXTRA_ARGS"
+    CMD+=("${EXTRA_ARRAY[@]}")
 fi
 
 echo "--- Executing Command ---"
