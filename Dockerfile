@@ -1,5 +1,5 @@
 # Use your optimized base image
-FROM vishva123/vllm-nightly-server-cuda-12.6.3:nightly-2026-03
+FROM vishva123/vllm-server-cuda-12.8.1
 
 WORKDIR /workspace
 
@@ -25,17 +25,17 @@ RUN mkdir -p /var/run/sshd && \
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
+# Copy chat template
 COPY qwen3_nonthinking.jinja /qwen3_nonthinking.jinja
 
-# Set sensible defaults (Can be overridden by RunPod Env Vars)
+# Set sensible defaults (can be overridden by RunPod env vars)
 ENV MODEL=""
 ENV PORT=8000
 ENV TRUST_REMOTE_CODE=true
-ENV GPU_UTIL=0.90
-ENV TP_SIZE=1
+ENV GPU_MEMORY_UTILIZATION=0.90
+ENV TENSOR_PARALLEL_SIZE=1
+ENV PIPELINE_PARALLEL_SIZE=1
 
 EXPOSE 8000 22
-
-RUN pip install --no-cache-dir "transformers==5.0.0"
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
