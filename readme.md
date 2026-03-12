@@ -1,6 +1,6 @@
 # 🚀 Universal vLLM Server
 
-Production-grade, OpenAI-compatible server using **vLLM v0.15.0**. Deploy LLMs, Embeddings, or Vision models via environment variables.
+Production-grade, OpenAI-compatible server using **vLLM v0.17.0**. Deploy LLMs, Embeddings, or Vision models via environment variables.
 
 ### 🌟 Features
 
